@@ -36,7 +36,7 @@ return {
     -- ["<C-,>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
     ["<M-.>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
     ["<M-,>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
-    ["<C-[>"] = { function() require("astronvim.utils.buffer").prev() end, desc = "Previous buffer" },
+    -- ["<C-[>"] = { function() require("astronvim.utils.buffer").prev() end, desc = "Previous buffer" },
     -- if utils.is_available "smart-splits.nvim" then
     ["<M-Left>"] = { function() require("smart-splits").move_cursor_left() end, desc = "Move to left split" },
     ["<M-Down>"] = { function() require("smart-splits").move_cursor_down() end, desc = "Move to below split" },
