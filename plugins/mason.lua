@@ -11,6 +11,7 @@ return {
         "pyright",
         "bashls",
         "gopls",
+        "vimls",
       })
     end,
   },
