@@ -50,8 +50,10 @@ return {
     ["<M-,>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
     ["<S-PageDown>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
     ["<S-PageUp>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
-    ["<C-S-PageDown>"] = { function() vim.cmd.tabnext() end, desc = "Next tab" },
-    ["<C-S-PageUp>"] = { function() vim.cmd.tabprevious() end, desc = "Previous tab" },
+    ["<C-S-PageDown"] = { function() require("astronvim.utils.buffer").move(vim.v.count > 0 and vim.v.count or 1) end, desc = "Move buffer tab right" }, -- TODO: Debug this
+    ["<C-S-PageUp>"] = { function() require("astronvim.utils.buffer").move(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Move buffer tab left" },
+    ["<M-S-PageDown>"] = { function() vim.cmd.tabnext() end, desc = "Next tab" },
+    ["<M-S-PageUp>"] = { function() vim.cmd.tabprevious() end, desc = "Previous tab" },
     -- ["<C-[>"] = { function() require("astronvim.utils.buffer").prev() end, desc = "Previous buffer" },
     -- if utils.is_available "smart-splits.nvim" then
     ["<S-Left>"] = { function() require("smart-splits").move_cursor_left() end, desc = "Move to left split" },
