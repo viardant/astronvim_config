@@ -10,7 +10,17 @@ return {
   n = {
     -- ToggleTerm
     ["<F1>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
-    ["<F2>"] = { function() require("astronvim.utils").toggle_term_cmd(vim.fn.executable "python" == 1 and "python" or vim.fn.executable "python3" == 1 and "python3") end, desc = "ToggleTerm python" },
+    -- ["<F2>"] = { function() require("astronvim.utils").toggle_term_cmd(vim.fn.executable "python" == 1 and "python" or vim.fn.executable "python3" == 1 and "python3") end, desc = "ToggleTerm python" },
+    ["<F2>"] = {
+      function()
+        local python = vim.fn.executable "python" == 1 and "python" or vim.fn.executable "python3" == 1 and "python3"
+        if python then
+          require("astronvim.utils").toggle_term_cmd(python)
+        else
+          vim.notify("Python not found", vim.log.levels.WARN)
+        end
+      end,
+      desc = "ToggleTerm python" },
     ["<F3>"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" },
     ["<F4>"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" },
     -- second key is the lefthand side of the map
@@ -79,7 +89,16 @@ return {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
     ["<F1>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
-    ["<F2>"] = { function() require("astronvim.utils").toggle_term_cmd(vim.fn.executable "python" == 1 and "python" or vim.fn.executable "python3" == 1 and "python3") end, desc = "ToggleTerm python" },
+    ["<F2>"] = {
+      function()
+        local python = vim.fn.executable "python" == 1 and "python" or vim.fn.executable "python3" == 1 and "python3"
+        if python then
+          require("astronvim.utils").toggle_term_cmd(python)
+        else
+          vim.notify("Python not found", vim.log.levels.WARN)
+        end
+      end,
+      desc = "ToggleTerm python" },
     ["<F3>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
     ["<F4>"] = { "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
   },
