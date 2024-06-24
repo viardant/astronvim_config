@@ -83,7 +83,9 @@ return {
     --   },
     -- }
     vim.api.nvim_set_keymap("i", "<M-CR>", "copilot#Accept()", { expr = true, silent = true, noremap = true, nowait = true, script = true})
+    vim.api.nvim_set_keymap("i", "<T-CR>", "copilot#Accept()", { expr = true, silent = true, noremap = true, nowait = true, script = true})
     vim.api.nvim_set_keymap("i", "<M-a>", "copilot#Accept()", { expr = true, silent = true, noremap = true, nowait = true, script = true})
+    vim.api.nvim_set_keymap("i", "<M-k>", "copilot#Accept()", { expr = true, silent = true, noremap = true, nowait = true, script = true})
     vim.api.nvim_set_keymap("i", "<M-/>", "copilot#Accept()", { expr = true, silent = true, noremap = true, nowait = true, script = true})
   end,
 }

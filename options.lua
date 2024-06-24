@@ -19,6 +19,9 @@ return {
     resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
     gruvbox_contrast_dark = "hard", -- sets hard gruvbox contrasts
   },
+  o = {
+    termguicolors = true, -- sets vim.o.termguicolors
+  }
 }
 -- If you need more control, you can use the function()...end notation
 -- return function(local_vim)

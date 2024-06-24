@@ -32,5 +32,15 @@ return {
   {
     "github/copilot.vim",
     event = "VeryLazy",
+  },
+  {
+    "xiyaowong/transparent.nvim",
+    -- config = function()
+      -- require("transparent").setup({
+        -- enable = true,
+      -- })
+    -- end,
+    -- Do not lazyLoad this plugin
+    lazy = false,
   }
 }

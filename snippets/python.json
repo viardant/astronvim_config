@@ -11,6 +11,17 @@
     ],
     "description": "NanoBot callback handler definition"
   },
+  "NanoBot Simple Callback Definition": {
+    "prefix": ["simple", "simple_callback"],
+    "body": [
+      "@simple_callback('$2')",
+      "def callback_$1(runtime_data: RuntimeData, $2):",
+      "\tresult = {'response': ''}",
+      "\t$3",
+      "\treturn result"
+    ],
+    "description": "NanoBot callback handler definition"
+  },
   "NanoBot Command Definition": {
     "prefix": ["comm", "command"],
     "body": [

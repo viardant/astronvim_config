@@ -37,16 +37,20 @@ return {
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    ["<D-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     -- quick close
     ["<C-w>"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
+    ["<D-w>"] = { function() require("astronvim.utils.buffer").close() end, desc = "Close buffer" },
     -- quick buffer swapping
     ["<C-PageDown>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
     ["<C-PageUp>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
     ["<leader>."] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
     ["<leader>,"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
-    -- ["<C-.>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
+    -- ["<C-.>"] = { function() require("astronvim.utls.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
     -- ["<C-,>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
+    ["<S-D-}>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
     ["<M-.>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
+    ["<S-D-{>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
     ["<M-,>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
     ["<S-PageDown>"] = { function() require("astronvim.utils.buffer").nav(vim.v.count > 0 and vim.v.count or 1) end, desc = "Next buffer" },
     ["<S-PageUp>"] = { function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end, desc = "Previous buffer" },
@@ -111,7 +115,9 @@ return {
     ["<M-[>"] = { "<cmd>call copilot#Previous()<CR>", desc = "Fetches previous copilot suggestion" },
     ["<M-,>"] = { "<cmd>call copilot#Previous()<CR>", desc = "Fetches previous copilot suggestion" },
     ["<M-\\>"] = { "<cmd>call copilot#Suggest()<CR>", desc = "Explicitly request a copilot suggestion" },
+    ["<T-\\>"] = { "<cmd>call copilot#Suggest()<CR>", desc = "Explicitly request a copilot suggestion" },
     ["<M-BS>"] = { "copilot#Dismiss()", desc = "Dismiss the current copilot suggestion", script = true, silent = true, nowait = true, expr = true },
+    ["<T-BS>"] = { "copilot#Dismiss()", desc = "Dismiss the current copilot suggestion", script = true, silent = true, nowait = true, expr = true },
     -- "copilot#Accept()" mapping was moved into init.lua polish function to avoid an unknown bug where unicode characters were being inserted into the buffer
     -- ["<M-CR>"] = { "copilot#Accept()", desc = "Accept copilot suggestion", script = true, silent = true, nowait = true, expr = true, noremap = true },
     -- ["<M-CR>"] = {
