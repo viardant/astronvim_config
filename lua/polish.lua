@@ -46,4 +46,7 @@ vim.api.nvim_set_keymap(
   "copilot#Accept()",
   { expr = true, silent = true, noremap = true, nowait = true, script = true }
 )
-vim.g.transparent_groups = vim.list_extend(vim.g.transparent_groups or {}, { "NeoTreeNormal", "NeoTreeEndOfBuffer" })
+vim.g.transparent_groups = vim.list_extend(
+  vim.g.transparent_groups or {},
+  { "NeoTreeNormal", "NeoTreeEndOfBuffer", "NormalFloat", "FloatBorder" }
+)
